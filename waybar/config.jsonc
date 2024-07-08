@@ -1,0 +1,38 @@
+{
+    "height": 31,
+    "layer": "top",
+    "font": "FontAwesome 6",
+    "modules-left": ["group/stats"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray", "group/controls", "group/system", "clock"],
+
+    /// Custom Modules
+    "custom/power-off": {
+        "interval": 60,
+        "tooltip": true,
+        "format": "\uf011",
+        "return-type": "json",
+        "on-click": "~/.config/rofi/power/power.sh",
+        "exec": "~/.config/waybar/scripts/uptime.sh"
+    },
+
+    // Module Groups
+    "group/controls": { "orientation": "horizontal", "modules": ["mpris", "pulseaudio"] },
+    "group/stats": { "orientation": "horizontal", "modules": ["cpu", "temperature", "memory", "privacy"] },
+    "group/system": { "orientation": "horizontal", "modules": ["custom/power-off"] },
+
+    // Module Configurations
+    "tray": { "spacing": 4, "icon-size": 16 },
+    "clock": { "format-alt": "{:%a, %b %d, %Y}" },
+    "cpu": { "interval": 2, "format": "\uf2db {usage}%" },
+    "memory": { "interval": 2, "format": "\uf538 {percentage}%", "tooltip-format": "{used} GiB / {total} GiB" },
+    "privacy": { "icon-size": 16, "icon-spacing": 4, "modules": [{ "type": "screenshare" }, { "type": "audio-in" }] },
+    "pulseaudio": { "format": "{icon} {volume}%", "format-muted": "\ufa69", "format-icons": { "default": "\uf028" } },
+    "temperature": { "interval": 2, "tooltip": false, "format": "\uf2c7 {temperatureC} °C", "hwmon-path": "/sys/class/hwmon/hwmon2/temp3_input" },
+    "mpris": {
+        "title-len": 20,
+        "artist-len": 20,
+        "format": "{status_icon} {title} - {artist}",
+        "status-icons": { "playing": "\uf144", "paused": "\uf28b" }
+    }
+}

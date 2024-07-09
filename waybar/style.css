@@ -4,7 +4,7 @@ window#waybar {
     background-color: transparent;
 }
 
-/* Properly space power buttons */
+/* Properly space system controls */
 #system {
     font-size: 17px;
     margin: 1px 5px 0px 5px;
@@ -37,7 +37,6 @@ window#waybar.empty #window { border: none; }
 #clock { padding-top: 1.5px; }
 #stats { padding-right: 0px; }
 #pulseaudio { margin-top: 2px; }
-#custom-reboot, #custom-logout { margin-right: 10px; }
 #cpu, #tray, #memory, #temperature { padding-top: 2px; }
 #cpu, #mpris, #privacy, #temperature { margin-right: 5px; }
 

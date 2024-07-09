@@ -16,7 +16,7 @@
         "exec": "wttrbar --hide-conditions --location \"Surrey, Canada\""
     },
 
-    "custom/power-off": {
+    "custom/power-menu": {
         "interval": 60,
         "tooltip": true,
         "format": "\uf011",
@@ -28,7 +28,7 @@
     // Module Groups
     "group/controls": { "orientation": "horizontal", "modules": ["mpris", "pulseaudio"] },
     "group/stats": { "orientation": "horizontal", "modules": ["cpu", "temperature", "memory", "privacy"] },
-    "group/system": { "orientation": "horizontal", "modules": ["custom/power-off"] },
+    "group/system": { "orientation": "horizontal", "modules": ["custom/power-menu"] },
 
     // Module Configurations
     "tray": { "spacing": 4, "icon-size": 16 },

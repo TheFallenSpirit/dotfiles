@@ -2,11 +2,20 @@
     "height": 31,
     "layer": "top",
     "font": "FontAwesome 6",
-    "modules-left": ["group/stats"],
+    "modules-left": ["group/stats", "custom/weather"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["tray", "group/controls", "group/system", "clock"],
 
     /// Custom Modules
+    "custom/weather": {
+        "format": "{}°",
+        "tooltip": true,
+        "interval": 900,
+        "return-type": "json",
+        "on-click": "xdg-open https://wttr.in",
+        "exec": "wttrbar --hide-conditions --location \"Surrey, Canada\""
+    },
+
     "custom/power-off": {
         "interval": 60,
         "tooltip": true,
@@ -27,11 +36,12 @@
     "cpu": { "interval": 2, "format": "\uf2db {usage}%" },
     "memory": { "interval": 2, "format": "\uf538 {percentage}%", "tooltip-format": "{used} GiB / {total} GiB" },
     "privacy": { "icon-size": 16, "icon-spacing": 4, "modules": [{ "type": "screenshare" }, { "type": "audio-in" }] },
-    "pulseaudio": { "format": "{icon} {volume}%", "format-muted": "\ufa69", "format-icons": { "default": "\uf028" } },
+    "pulseaudio": { "format": "\uf028 {volume}%", "format-muted": "\uf6a9 {volume}%", "on-click": "amixer set Master toggle > /dev/null 2>&1" },
     "temperature": { "interval": 2, "tooltip": false, "format": "\uf2c7 {temperatureC} °C", "hwmon-path": "/sys/class/hwmon/hwmon2/temp3_input" },
     "mpris": {
         "title-len": 20,
         "artist-len": 20,
+        "on-click": "~/.config/rofi/mpris.sh",
         "format": "{status_icon} {title} - {artist}",
         "status-icons": { "playing": "\uf144", "paused": "\uf28b" }
     }

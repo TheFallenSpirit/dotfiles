@@ -20,10 +20,10 @@ window#waybar {
 }
 
 /* Style all modules to have proper margins and borders */
-#tray, #clock, #stats, #window, #controls {
+#tray, #clock, #stats, #window, #controls, #custom-weather {
     margin: 2px 3px;
     font-weight: 500;
-    padding: 0px 5px;
+    padding: 0px 4px;
     border-radius: 16px;
     background-color: transparent;
     border: 2px solid rgba(41, 218, 224, 0.6);

@@ -1,9 +1,9 @@
 {
     "height": 31,
     "layer": "top",
-    "font": "FontAwesome 6",
-    "modules-left": ["group/stats", "custom/weather"],
+    "font": "0xProto Nerd Font",
     "modules-center": ["hyprland/window"],
+    "modules-left": ["group/stats", "custom/weather"],
     "modules-right": ["tray", "group/controls", "group/system", "clock"],
 
     /// Custom Modules
@@ -21,7 +21,7 @@
         "tooltip": true,
         "format": "\uf011",
         "return-type": "json",
-        "on-click": "~/.config/rofi/power/power.sh",
+        "on-click": "ags -t controls",
         "exec": "~/.config/waybar/scripts/uptime.sh"
     },
 

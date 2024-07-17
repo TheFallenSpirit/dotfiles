@@ -24,7 +24,8 @@ const Network = () => Widget.Button({
 const Bluetooth = () => Widget.Button({
     cursor: 'pointer',
     className: 'connection',
-    onClicked: () => bluetooth.enabled = !bluetooth.enabled,
+    onPrimaryClick: () => bluetooth.enabled = !bluetooth.enabled,
+    onSecondaryClick: () => Utils.exec('kitty -- bluetuith'),
 
     child: Widget.Box({ spacing: 5, children: [
         Widget.Icon({ className: 'connection-icon' }).hook(bluetooth, self => {

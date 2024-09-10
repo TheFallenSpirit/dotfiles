@@ -1,13 +1,17 @@
 $radius: 12px;
 $accent: rgb(147, 112, 219);
 $background: rgba(13, 13, 13, 1);
-$container: rgba(93, 93, 93, 0.5);
+$container: rgba(93, 93, 93, 0.6);
 
+$red: rgb(237, 61, 61);
+$gray: rgb(75, 85, 99);
+$green: rgb(92, 210, 92);
+$orange: rgb(241, 160, 55);
 $text-primary: rgb(243, 244, 246);
 $text-secondary: rgb(176, 176, 176);
 
+//  * { color: $text-primary; }
 .window { background-color: transparent; }
-.connection, .media-title, .notif-title { font-size: 15px; color: $text-primary; }
 
 .container {
     padding: 0.5em;
@@ -16,67 +20,34 @@ $text-secondary: rgb(176, 176, 176);
     background-color: $container;
 }
 
-
-/* Audio Slider custom styles */
-.audio-slider slider { all: unset; }
-.audio-slider { padding: 0px; margin: 0.6em 0.3em; }
-.audio-slider trough highlight { background-color: $accent; }
-.audio-label { padding: 0em; font-size: 22px; background-color: transparent; }
-.audio-slider trough { min-height: 0.9em; background-color: rgb(75, 85, 99); }
-.audio { padding: 0.3em 0.6em; border-radius: $radius; background-color: $background; }
+@import './styles/bar.scss';
+@import './styles/controls.scss';
 
 
-/* MPRIS media controls custom styles */
-.media-title { font-size: 16px; }
-.media-button { font-size: 16px; }
-.media-btn-primary { font-size: 21px; }
-.media-artists { font-size: 14px; color: $text-secondary; }
-.media-position { font-size: 12px; color: $text-secondary; }
-.media-primary { padding: 0em; margin: 0.1em 0.1em 0em 0.6em; }
-.media { padding: 0.5em; border-radius: $radius; background-color: $background; }
-.media-button, .media-btn-active, .media-btn-primary { padding: 0em; background-color: transparent; }
-.media-btn-active { background-color: rgb(75, 85, 99); }
-
-
-.media-artwork {
-    min-width: 5.5em;
-    min-height: 5.5em;
+.notification {
+    padding: 0.6em;
+    min-width: 24em;
     border-radius: $radius;
-    background-size: cover;
-    background-position: center;
-    background-image: url('https://th.bing.com/th/id/OIP.qzqua25XFpdQGezlogO2ewHaHa?rs=1&pid=ImgDetMain');
-}
+    background-color: rgb(45, 45, 45);
 
+    .title { font-size: 18px; font-weight: 600; }
 
-/* Connections controls custom styles */
-.connection-icon { font-size: 21px; }
-.connection-label { min-width: 8em; font-weight: 600; }
-.connection { padding: 0.6em; border-radius: $radius; background-color: $background; }
+    .close {
+        padding: 0.2em;
+        min-width: 0em;
+        min-height: 0em;
+        border-radius: 100%;
+        background-color: #1E2127;
 
+        image { font-size: 15px; };
+    }
 
-/* Power controls custom styles */
-.power-control { padding: 0.35em; font-size: 24px; background-color: $background; }
-
-
-/* Notifications custom styles */
-.notif-icon { font-size: 24px; }
-.notif-title { font-size: 18px; font-weight: 600; }
-.notif-container { min-width: 24em; min-height: 1em; }
-.notification { padding: 0.6em; border-radius: $radius; background-color: $background; }
-
-.notif-image {
-    min-width: 0.9em;
-    min-height: 0.9em;
-    border-radius: 100%;
-    background-size: cover;
-    background-position: center;
-}
-
-.notif-close {
-    padding: 0.4em;
-    font-size: 12px;
-    min-width: 0.9em;
-    min-height: 0.9em;
-    border-radius: 100%;
-    background-color: #1E2127;
+    .icon, image {
+        font-size: 22px;
+        min-width: 0.9em;
+        min-height: 0.9em;
+        border-radius: 100%;
+        background-size: cover;
+        background-position: center;
+    }
 }

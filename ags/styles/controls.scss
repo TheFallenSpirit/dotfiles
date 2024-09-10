@@ -1,0 +1,85 @@
+.power-control {
+    color: $accent;
+    padding: 0.2em;
+    font-size: 28px;
+    background-color: $background;
+
+    &:hover { color: $orange; };
+}
+
+.connection {
+    padding: 0.6em;
+    font-size: 15px;
+    color: $text-primary;
+    border-radius: $radius;
+    background-color: $background;
+
+    image { font-size: 21px; };
+    label { min-width: 8em; font-weight: 600; };
+}
+
+.audio {
+    padding: 0.3em 0.6em;
+    border-radius: $radius;
+    background-color: $background;
+
+    button {
+        padding: 0em;
+        color: $accent;
+        font-size: 22px;
+        background-color: transparent;
+
+        .muted { color: rgb(107, 122, 142); };
+    };
+
+    .slider {
+        padding: 0em;
+        slider { all: unset };
+        margin: 0.6em 0.3em 0.6em 0.45em;
+
+        trough {
+            min-height: 0.9em;
+            background-color: $gray;
+            highlight { background-color: $accent; }
+        };
+    };
+}
+
+.media {
+    padding: 0.5em;
+    border-radius: $radius;
+    background-color: $background;
+
+    .title { font-size: 16px; };
+    .artists { font-size: 14px; color: $text-secondary; };
+    .position { font-size: 12px; color: $text-secondary; };
+
+    .container {
+        padding: 0em;
+        margin: 0.1em 0.1em 0em 0.6em;
+
+        button {
+            :hover { color: $accent; };
+        };
+    };
+
+    button {
+        padding: 0em;
+        font-size: 16px;
+        color: $accent;
+        background-color: transparent;
+
+        &.active { color: $accent; };
+        &.primary { color: $accent; font-size: 21px; };
+    };
+
+    .artwork {
+        min-width: 5.5em;
+        min-height: 5.5em;
+        border-radius: $radius;
+        background-size: cover;
+        background-position: center;
+        background-image: url('https://th.bing.com/th/id/OIP.qzqua25XFpdQGezlogO2ewHaHa?rs=1&pid=ImgDetMain');
+    };
+};
+

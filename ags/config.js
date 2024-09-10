@@ -1,13 +1,6 @@
-import Audio from './controls/Audio.js';
-import Media from './controls/Media.js';
-import Power from './controls/Power.js';
-import QuickSettings from './controls/QuickSettings.js';
-import NotificationPopup from './windows/NotificationPopup.js';
-import NotificationContainer from './structures/NotificationContainer.js';
-
-const PowerContainer = () => Widget.Box({ className: 'container', children: [Power()] });
-const MediaContainer = () => Widget.Box({ className: 'container', children: [Media()] });
-const QuickSettingsContainer = () => Widget.Box({ spacing: 8, vertical: true, className: 'container', children: [QuickSettings(), Audio()] });
+import ControlsWindow from './windows/ControlsWindow.js';
+import NotificationsWindow from './windows/NotificationsWindow.js';
+import TopBarWindow from './windows/TopBarWindow.js';
 
 const css = `/tmp/ags-styles.css`;
 Utils.exec(`sassc ${App.configDir}/styles.scss ${css}`);
@@ -17,26 +10,21 @@ App.config({
     icons: './icons',
     windows: () => [
         Widget.Window({
-            margins: [10],
-            visible: false,
-            name: 'controls',
-            className: 'controls',
-            anchor: ['top', 'right'],
-            child: Widget.Box({
-                vertical: true,
-                children: [QuickSettingsContainer(), MediaContainer(), PowerContainer(), NotificationContainer()]
-            })
+            name: 'bar', margins: [5], visible: true, child: TopBarWindow(), monitor: 0,
+            className: 'window', exclusivity: 'exclusive', anchor: ['top', 'left', 'right']
         }),
         Widget.Window({
-            margins: [10],
-            visible: true,
-            name: 'notifications',
-            anchor: ['top', 'right'],
-            className: 'notifications',
-            child: NotificationPopup()
-        }).hook(App, self => {
-            const controls = App.windows.find((w) => w.name === 'controls');
-            self.visible = !controls.visible
-        })
+            margins: [10], visible: false, name: 'controls', className: 'window',
+            child: ControlsWindow(), anchor: ['top', 'right'],
+        }),
+        // Widget.Window({
+            // margins: [10],
+            // className: 'window',
+            // name: 'notifications',
+            // anchor: ['top', 'right'],
+            // child: NotificationsWindow(),
+        // }).hook(App, self => self.visible = !App.windows.find((w) => w.name === 'controls').visible)
     ]
 });
+
+// Utils.notify('Test Notification', 'This is an example test notification with the tabler power icon.', 'tabler-power-symbolic')

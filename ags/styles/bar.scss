@@ -1,0 +1,23 @@
+.bar-item {
+    font-size: 16px;
+    border-radius: 2.5em;
+    padding: 0em 0.45em;
+    background-color: $background;
+    border: 2px solid rgb(133, 86, 245);
+
+    image { font-size: 18px; };
+}
+
+.tray {
+    button { padding: 0px; background-color: transparent; }
+}
+
+.system-stats {
+    .ram { margin-left: 0.45rem };
+    .temp { margin-left: 0.15rem };
+
+    & > *:not(:last-child) {
+        padding-right: 0.4rem;
+        border-right: 2px solid rgb(133, 86, 245);
+    }
+}

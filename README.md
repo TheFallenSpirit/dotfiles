@@ -1,14 +1,13 @@
 # Hyprland Config (dotfiles)
-My personal Hyprland config using Waybar, Rofi, AGS, and a few other utilities.
+My personal Hyprland config using Rofi, AGS, and a few other utilities.
 
 ## Installation:
 
 ### Required Dependencies:
 The following dependencies are required for my config to work, please make sure they are all installed and added to path.
-
+ 
 - [Hyprland](https://hyprland.org): The star of the show, Hyprland itself.
-- [Waybar](https://github.com/Alexays/Waybar): The key to having a beautiful and functional top bar, read the installation docs [here](https://github.com/Alexays/Waybar?tab=readme-ov-file#installation).
-- [Rofi](https://github.com/davatorium/rofi): A very useful application launcher, and dmenu replacement. It powers my media controls menu and power menu, read the installation docs [here](https://github.com/davatorium/rofi/blob/next/INSTALL.md).
+<!-- - [Rofi](https://github.com/davatorium/rofi): A very useful application launcher, and dmenu replacement. It powers my media controls menu and power menu, read the installation docs [here](https://github.com/davatorium/rofi/blob/next/INSTALL.md). -->
 - [AGS](https://aylur.github.io/ags-docs/): Aylur's GTK Shell, an extremely customisable GTK shell library for building Wayland widgets, read the installation docs [here](https://aylur.github.io/ags-docs/config/installation/).
 
 ### Optional Dependencies:
@@ -25,12 +24,10 @@ You can use the commands below to do this automatically.
 git clone https://github.com/TheFallenSpirit/dotfiles
 cp -r dotfiles/ags ~/.config/
 cp -r dotfiles/hypr ~/.config/
-cp -r dotfiles/rofi ~/.config/
-cp -r dotfiles/waybar ~/.config/
 ```
 
 ### After installing all dependencies and moving the files, restart your computer.
-After restart, you should see my waybar configuration loaded and ready.
+After restart, you should see my AGS configuration loaded and ready.
 
 ## Default Keybinds:
 ```txt
@@ -46,3 +43,14 @@ Force Reload AGS: SUPER + SHIFT + R
 
 ## Issues & Suggestions:
 If you want to report a problem or have a suggestion, feel free to open an issue on this repository. Pull requests are also welcome for bug fixes or improvements.
+
+Personal Installation Scripts (Use at own risk):
+```bash
+pacman -S nano hyprland nautilus pipewire wireplumber pipewire-pulse pipewire-alsa xdg-desktop-portal-gtk discord firefox adw-gtk-theme flatpak slurp grim wl-clipboard noto-fonts noto-fonts-cjk noto-fonts-emoji
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
+systemctl --user enable --now pipewire wireplumber pipewire-pulse pipewire-alsa
+sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
+cd ~; mkdir Downloads; cd Downloads; sudo pacman -S --needed git base-devel; git clone https://aur.archlinux.org/yay-bin.git; cd yay-bin; makepkg -si
+cd ~/Downloads; git clone https://github.com/Gustash/hyprshot.git hyprshot; sudo mv hyprshot/hyprshot /usr/local/bin; rm -r hyprshot
+```

@@ -46,7 +46,7 @@ If you want to report a problem or have a suggestion, feel free to open an issue
 
 Personal Installation Scripts (Use at own risk):
 ```bash
-pacman -S nano hyprland nautilus pipewire wireplumber pipewire-pulse pipewire-alsa xdg-desktop-portal-gtk discord firefox adw-gtk-theme flatpak slurp grim wl-clipboard noto-fonts noto-fonts-cjk noto-fonts-emoji
+pacman -S nano hyprland nautilus pipewire wireplumber pipewire-pulse pipewire-alsa xdg-desktop-portal-gtk discord firefox adw-gtk-theme flatpak slurp grim wl-clipboard noto-fonts noto-fonts-cjk noto-fonts-emoji sddm
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
 systemctl --user enable --now pipewire wireplumber pipewire-pulse pipewire-alsa

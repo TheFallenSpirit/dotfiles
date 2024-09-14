@@ -67,4 +67,5 @@ systemctl --user enable --now pipewire wireplumber pipewire-pulse pipewire-alsa
 sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
 cd ~; mkdir Downloads; cd Downloads; sudo pacman -S --needed git base-devel; git clone https://aur.archlinux.org/yay-bin.git; cd yay-bin; makepkg -si
 cd ~/Downloads; git clone https://github.com/Gustash/hyprshot.git hyprshot; sudo mv hyprshot/hyprshot /usr/local/bin; rm -r hyprshot
+mkdir -p ~/.config/wireplumber/wireplumber.conf.d; ln -s /home/fallen/Projects/dotfiles/wireplumber/* /home/fallen/.config/wireplumber/wireplumber.conf.d
 ```

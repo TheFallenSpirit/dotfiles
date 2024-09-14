@@ -43,6 +43,16 @@
             highlight { background-color: $accent; }
         };
     };
+
+    .dropdown-icon { :hover { color: $accent; } };
+
+    .output {
+        color: $text-secondary;
+        
+        image { font-size: 20px; };
+        label { font-size: 17px; };
+        &:hover { color: $text-primary };
+    };
 }
 
 .media {

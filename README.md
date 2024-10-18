@@ -48,7 +48,7 @@ sudo mkdir -p /usr/share/sddm/themes/fallen && sudo ln -s $PWD/dotfiles/sddm/* /
 
 cd ~/Downloads
 git clone https://github.com/adi1090x/rofi
-cp -r rofi/files/colors ~/.config/rofi/colors
+mkdir ~/.config/rofi/colors && cp -r rofi/files/colors ~/.config/rofi/colors
 ```
 
 Then change modify the following lines in `/usr/lib/sddm/sddm.conf.d/default.conf`:

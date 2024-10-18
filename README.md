@@ -5,16 +5,23 @@ My personal Hyprland config using Rofi, AGS, SDDM, and a few other utilities.
 
 ### Required Dependencies:
 The following dependencies are required for my config to work, please make sure they are all installed and added to path.
-- [SDDM](https://github.com/sddm/sddm): A simple and modern display manager.
 - [Hyprland](https://hyprland.org): The star of the show, Hyprland itself.
-<!-- - [Rofi](https://github.com/davatorium/rofi): A very useful application launcher, and dmenu replacement. It powers my media controls menu and power menu, read the installation docs [here](https://github.com/davatorium/rofi/blob/next/INSTALL.md). -->
-- [AGS](https://aylur.github.io/ags-docs/): Aylur's GTK Shell, an extremely customisable GTK shell library for building Wayland widgets, read the installation docs [here](https://aylur.github.io/ags-docs/config/installation/).
+- [SDDM](https://github.com/sddm/sddm): A simple and modern display manager.
+- [Rofi](https://github.com/lbonn/rofi): A very useful application launcher, and dmenu replacement.
+- [AGS](https://aylur.github.io/ags-docs/): Aylur's GTK Shell, an extremely customisable GTK shell library for building Wayland widgets.
 
 Use the following commands to install all dependencies and sub-dependencies for my config:
 ```bash
-yay -S aylurs-gtk-shell
-sudo pacman -S sddm gnome-bluetooth-3.0 libdbusmenu-gtk3 sassc
+sudo pacman -S nano kitty hyprland nautilus pipewire wireplumber pipewire-pulse pipewire-alsa
+sudo pacman -S discord firefox adw-gtk-theme flatpak slurp grim wl-clipboard noto-fonts noto-fonts-cjk
+sudo pacman -S xdg-desktop-portal-gtk sddm gnome-bluetooth-3.0 libdbusmenu-gtk3 sassc noto-fonts-emoji rofi-wayland
+
+# Installing "Yay" AUR Helper
+cd ~ && mkdir Downloads && cd Downloads && sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+
+yay -S hyprshot aylurs-gtk-shell
 sudo systemctl enable --now sddm
+systemctl --user enable --now pipewire wireplumber pipewire-pulse pipewire-alsa
 ```
 
 ### Optional Dependencies:
@@ -29,9 +36,14 @@ You can use the commands below to do this automatically.
 
 ```bash
 git clone https://github.com/TheFallenSpirit/dotfiles
-cp -r dotfiles/ags ~/.config/
-cp -r dotfiles/hypr ~/.config/
-sudo cp -r dotfiles/sddm /usr/share/sddm/themes/fallen
+ln -s dotfiles/ags/* ~/.config/ags
+ln -s dotfiles/hypr/* ~/.config/hypr
+sudo ln -s dotfiles/sddm/* /usr/share/sddm/themes/fallen
+
+git clone https://github.com/adi1090x/rofi
+mkdir -p ~/.config/rofi/themes
+ln -s dotfiles/rofi/themes/* ~/.config/rofi/themes
+cp -r rofi/files/colors ~/.config/rofi/colors
 ```
 
 Then change modify the following lines in `/usr/lib/sddm/sddm.conf.d/default.conf`:
@@ -48,11 +60,9 @@ After restart, you should see my AGS configuration loaded and ready.
 Open Launcher: SUPER + R
 Close Application: SUPER + Q
 Open Control Center: SUPER + C
-Take Screenshot (Hyprshot): ALT + SHIFT + S
-Fullscreen Powermenu (Rofi): CTRL + ALT + DELETE
 
-Force Reload Waybar: ALT + R
-Force Reload AGS: SUPER + SHIFT + R
+Force Reload AGS: ALT + SHIFT + R
+Take Screenshot (Hyprshot): ALT + SHIFT + S
 ```
 
 ## Issues & Suggestions:
@@ -60,12 +70,8 @@ If you want to report a problem or have a suggestion, feel free to open an issue
 
 Personal Installation Scripts (Use at own risk):
 ```bash
-pacman -S nano kitty hyprland nautilus pipewire wireplumber pipewire-pulse pipewire-alsa xdg-desktop-portal-gtk discord firefox adw-gtk-theme flatpak slurp grim wl-clipboard noto-fonts noto-fonts-cjk noto-fonts-emoji wofi
+sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
+mkdir -p ~/.config/wireplumber/wireplumber.conf.d; ln -s /home/fallen/Projects/dotfiles/wireplumber/* /home/fallen/.config/wireplumber/wireplumber.conf.d
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
-systemctl --user enable --now pipewire wireplumber pipewire-pulse pipewire-alsa
-sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"
-cd ~; mkdir Downloads; cd Downloads; sudo pacman -S --needed git base-devel; git clone https://aur.archlinux.org/yay-bin.git; cd yay-bin; makepkg -si
-cd ~/Downloads; git clone https://github.com/Gustash/hyprshot.git hyprshot; sudo mv hyprshot/hyprshot /usr/local/bin; rm -r hyprshot
-mkdir -p ~/.config/wireplumber/wireplumber.conf.d; ln -s /home/fallen/Projects/dotfiles/wireplumber/* /home/fallen/.config/wireplumber/wireplumber.conf.d
 ```

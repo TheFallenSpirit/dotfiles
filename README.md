@@ -79,4 +79,5 @@ sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/
 mkdir -p ~/.config/wireplumber/wireplumber.conf.d; ln -s /home/fallen/Projects/dotfiles/wireplumber/* /home/fallen/.config/wireplumber/wireplumber.conf.d
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark'
+flatpak install org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
 ```

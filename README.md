@@ -41,7 +41,7 @@ These commands will setup symlinks so you can update your configs from my git re
 
 ```bash
 git clone https://github.com/TheFallenSpirit/dotfiles
-mkdir ~/.config/hypr && ln -s $PWD/dotfiles/ags/* ~/.config/ags
+mkdir ~/.config/ags && ln -s $PWD/dotfiles/ags/* ~/.config/ags
 mkdir ~/.config/hypr && ln -s $PWD/dotfiles/hypr/* ~/.config/hypr
 mkdir -p ~/.config/rofi/themes && ln -s $PWD/dotfiles/rofi/themes/* ~/.config/rofi/themes
 sudo mkdir -p /usr/share/sddm/themes/fallen && sudo ln -s $PWD/dotfiles/sddm/* /usr/share/sddm/themes/fallen

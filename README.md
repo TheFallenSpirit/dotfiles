@@ -11,6 +11,8 @@ The following dependencies are required for my config to work, please make sure 
 - [AGS](https://aylur.github.io/ags-docs/): Aylur's GTK Shell, an extremely customisable GTK shell library for building Wayland widgets.
 
 Use the following commands to install all dependencies and sub-dependencies for my config:
+
+**These commands are for Arch and Arch based linux distros!**
 ```bash
 sudo pacman -S nano kitty hyprland nautilus pipewire wireplumber pipewire-pulse pipewire-alsa
 sudo pacman -S discord firefox adw-gtk-theme flatpak slurp grim wl-clipboard noto-fonts noto-fonts-cjk
@@ -33,16 +35,19 @@ The following dependencies are optional, and are not required for my config to w
 You'll need to move all the folders from this repository to your home ".config" directory.
 <br/>
 You can use the commands below to do this automatically.
+These commands will setup symlinks so you can update your configs from my git repo automatically.
+
+**Make sure to store these files in a directory where they won't get deleted!**
 
 ```bash
 git clone https://github.com/TheFallenSpirit/dotfiles
-ln -s dotfiles/ags/* ~/.config/ags
-ln -s dotfiles/hypr/* ~/.config/hypr
-sudo ln -s dotfiles/sddm/* /usr/share/sddm/themes/fallen
+mkdir ~/.config/hypr && ln -s $PWD/dotfiles/ags/* ~/.config/ags
+mkdir ~/.config/hypr && ln -s $PWD/dotfiles/hypr/* ~/.config/hypr
+mkdir -p ~/.config/rofi/themes && ln -s $PWD/dotfiles/rofi/themes/* ~/.config/rofi/themes
+sudo mkdir -p /usr/share/sddm/themes/fallen && sudo ln -s $PWD/dotfiles/sddm/* /usr/share/sddm/themes/fallen
 
+cd ~/Downloads
 git clone https://github.com/adi1090x/rofi
-mkdir -p ~/.config/rofi/themes
-ln -s dotfiles/rofi/themes/* ~/.config/rofi/themes
 cp -r rofi/files/colors ~/.config/rofi/colors
 ```
 

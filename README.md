@@ -14,7 +14,7 @@ Use the following commands to install all dependencies and sub-dependencies for 
 
 **These commands are for Arch and Arch based linux distros!**
 ```bash
-sudo pacman -S nano kitty hyprland nautilus pipewire wireplumber pipewire-pulse pipewire-alsa
+sudo pacman -S nano kitty hyprland nautilus pipewire wireplumber pipewire-pulse pipewire-alsa udisks2
 sudo pacman -S discord firefox adw-gtk-theme flatpak slurp grim wl-clipboard noto-fonts noto-fonts-cjk
 sudo pacman -S xdg-desktop-portal-gtk sddm gnome-bluetooth-3.0 libdbusmenu-gtk3 sassc noto-fonts-emoji rofi-wayland
 

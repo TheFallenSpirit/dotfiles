@@ -17,8 +17,9 @@ const LeftBox = () => {
     const Clock = Widget.Box({ spacing: 3, classNames: ['bar-item', 'clock'], children: [
         Widget.Icon({ vpack: 'center', icon: 'tabler-clock-symbolic' }),
         Widget.Label().poll(1000, self => {
-            Utils.execAsync('date "+%H:%M"').then((time) => self.label = time);
-            Utils.execAsync('date "+%a, %B %d, %Y"').then((date) => self.tooltipText = date);
+            const dt = new GLib.DateTime();
+            self.label = dt.format('%R');
+            self.tooltipText = dt.format('%A, %B %d, %Y');
         })
     ]});
 

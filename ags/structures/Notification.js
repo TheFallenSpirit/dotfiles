@@ -5,8 +5,8 @@ const NotificationIcon = (notification) => {
     });
 
     let icon = 'tabler-bell-symbolic';
-    if (Utils.lookUpIcon(notification.app_icon)) icon = app_icon;
-    if (notification.app_entry && Utils.lookUpIcon(notification.app_entry)) icon = app_entry;
+    if (Utils.lookUpIcon(notification.appIcon)) icon = notification.appIcon;
+    if (notification.appEntry && Utils.lookUpIcon(notification.appEntry)) icon = notification.appEntry;
     return Widget.Icon({ icon });
 };
 

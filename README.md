@@ -60,6 +60,13 @@ Current=fallen
 ### After installing all dependencies and moving the files, restart your computer.
 After restart, you should see my AGS configuration loaded and ready.
 
+## Modifications to Sudoers File
+In order for my restart to Windows button to work, you need to add the following line to your sudoers file:
+```
+<username-here> ALL=NOPASSWD: /usr/bin/efibootmgr
+```
+Please read all appropriate documentation before adding this line to ensure you know what you're doing.
+
 ## Default Keybinds:
 ```txt
 Open Launcher: SUPER + R

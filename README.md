@@ -33,3 +33,8 @@ Install and configure Gnome Keyring w/ Greetd. Add to bottom of respective secti
 auth        optional      pam_gnome_keyring.so
 session     optional      pam_gnome_keyring.so      auto_start
 ```
+
+Install custom screenshare picker
+```fish
+yay -S hyprland-preview-share-picker-git
+```

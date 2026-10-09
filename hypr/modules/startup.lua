@@ -1,0 +1,5 @@
+hl.on("hyprland.start", function()
+    hl.exec_cmd("dbus-update-activation-environment --systemd --all")
+    hl.exec_cmd("noctalia")
+    hl.exec_cmd("openrgb --startminimized --profile Fyre")
+end)

@@ -4,6 +4,7 @@ require("modules/startup")
 require("modules/keybinds")
 require("modules/gestures")
 require("modules/animations")
+require("modules/window_rules")
 
 hl.workspace_rule({
     default = true,

@@ -55,6 +55,8 @@ for i = 1, 10 do
 	hl.bind(mod .. "SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 end
 
+hl.bind(mod .. "G", hl.dsp.focus({ workspace = "name:gaming" }))
+
 
 -- Screenshots
 

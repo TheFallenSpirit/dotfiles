@@ -60,7 +60,9 @@ hl.bind(mod .. "G", hl.dsp.focus({ workspace = "name:gaming" }))
 
 -- Screenshots
 
-hl.bind("ALT + SHIFT + S", hl.dsp.exec_cmd(noct .. "screenshot-annotate"))
+hl.bind("ALT + SHIFT + S", hl.dsp.exec_cmd(noct .. "screenshot-region --annotate"))
+hl.bind("ALT + SHIFT + W", hl.dsp.exec_cmd(noct .. "screenshot-window --annotate"))
+hl.bind("ALT + SHIFT + A", hl.dsp.exec_cmd(noct .. "screenshot-fullscreen --annotate"))
 -- hl.bind("ALT + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))
 -- hl.bind("ALT + SHIFT + A", hl.dsp.exec_cmd('grim -o "$(hyprctl monitors -j | jq -r \'.[] | select(.focused == true).name\')" - | swappy -f -'))
 

@@ -102,10 +102,10 @@ gsettings set org.gnome.mutter center-new-windows true
 ### LUKS Encryption Stuff
 Enroll TPM2 with a PIN instead of full passphrase
 ```fish
-sudo systemd-cryptenroll /dev/nvme0n1p2 --tpm2-device=auto --tpm2-pcrs=0+7 --tpm2-with-pin=yes
+sudo systemd-cryptenroll <active-partition-path> --tpm2-device=auto --tpm2-pcrs=0+7 --tpm2-with-pin=yes
 ```
 
 Re-enroll TPM2 pin after firmware reset or update
 ```fish
-sudo systemd-cryptenroll /dev/nvme0n1p2 --wipe-slot=tpm2 --tpm2-device=auto --tpm2-pcrs=0+7 --tpm2-with-pin=yes
+sudo systemd-cryptenroll <active-partition-path> --wipe-slot=tpm2 --tpm2-device=auto --tpm2-pcrs=0+7 --tpm2-with-pin=yes
 ```

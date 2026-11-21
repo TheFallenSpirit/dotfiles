@@ -85,7 +85,7 @@ sudo limine-update
 ```
 
 > [!IMPORTANT]
-> Reboot before completion and re-enable secure boot if required.
+> Reboot after completion and re-enable secure boot if required.
 
 ### Setup Easy Anti Cheat v2 compatibility
 ```fish
